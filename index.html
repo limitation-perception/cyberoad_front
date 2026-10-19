@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cyberoad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">cyber<span>oad</span></h1>
+        <p class="tagline">Roadmap для підготовки до CTF: обери категорію, тип завдання і вивчай матеріали.</p>
+    </header>
+
+    <div id="error" class="error" hidden>
+        <div id="error-text"></div>
+        <button id="error-close" class="icon-btn" aria-label="Закрити">✕</button>
+    </div>
+
+    <main class="board">
+        <section class="column">
+            <div class="column-head">
+                <h2><span class="step">01</span> Категорії</h2>
+                <button class="add-btn" data-kind="category">+ Додати</button>
+            </div>
+            <ul id="categories" class="list"></ul>
+        </section>
+
+        <section class="column">
+            <div class="column-head">
+                <h2><span class="step">02</span> Типи завдань</h2>
+                <button class="add-btn" data-kind="taskType" disabled>+ Додати</button>
+            </div>
+            <ul id="task-types" class="list">
+                <li class="empty">Оберіть категорію</li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <div class="column-head">
+                <h2><span class="step">03</span> Матеріали</h2>
+                <button class="add-btn" data-kind="resource" disabled>+ Додати</button>
+            </div>
+            <ul id="resources" class="list">
+                <li class="empty">Оберіть тип завдання</li>
+            </ul>
+        </section>
+    </main>
+
+    <dialog id="form-dialog" class="dialog">
+        <form id="form" method="dialog">
+            <h3 id="form-title"></h3>
+            <div id="form-fields"></div>
+            <div class="form-actions">
+                <button type="button" id="form-cancel" class="btn-secondary">Скасувати</button>
+                <button type="submit" class="btn-primary">Зберегти</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
